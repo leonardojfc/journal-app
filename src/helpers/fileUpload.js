@@ -1,5 +1,6 @@
 export const fileUpload = async(file) => {
-    if( !file ) throw new Error('No tenemos ningún archivo a subir');
+    // if( !file ) throw new Error('No tenemos ningún archivo a subir')
+    if( !file ) return null
     const cloudUrl = 'https://api.cloudinary.com/v1_1/x-app-react-x/image/upload';
     const formData = new FormData();
     formData.append('upload_preset', 'react-journal');
@@ -15,7 +16,8 @@ export const fileUpload = async(file) => {
         const cloudResp = await resp.json();
         return cloudResp.secure_url;
     } catch (error) {
-        console.log(error);
-        throw new Error(error.message)
+        // console.log(error);
+        // throw new Error(error.message)
+        return null
     }
 }
