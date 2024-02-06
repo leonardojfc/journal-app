@@ -3,9 +3,9 @@ import { addNewEmptyNote, deleteNoteById, savingNewNote, setActiveNote, setNotes
 import { startDeletingNote, startLoadingNotes, startNewNote, startSaveNote, startUploadingFiles } from "../../../src/store/journal/thunks";
 import { FirebaseDB } from "../../../src/firebase/config";
 import { notes } from "../../fixtures/journalFixtures";
-import { loadNotes } from "../../../src/helpers";
+import { loadNotes } from "../../../src/helpers/loadNotes";
 
-jest.mock('../../../src/helpers')
+jest.mock('../../../src/helpers/loadNotes')
 
 describe('Pruebas en Journal Thunks', () => { 
     const dispatch = jest.fn();
